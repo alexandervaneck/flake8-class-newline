@@ -15,7 +15,7 @@ def read(*filenames, **kwargs):
     return sep.join(buf)
 
 
-# LONG_DESCRIPTION = read(os.path.join(__dir__, 'README.rst'))
+LONG_DESCRIPTION = read(os.path.join(__dir__, 'README.rst'))
 
 version = {}
 with open(
@@ -31,8 +31,8 @@ setup(
     install_requires=[
         'flake8',
     ],
-    # long_description=LONG_DESCRIPTION,
-    description='Flake8 lint for newlines after class definitions.',
+    long_description=LONG_DESCRIPTION,
+    description='Flake8 lint for newline after class definitions.',
     packages=['flake8_class_newline'],
     test_suite='tests',
     include_package_data=True,
