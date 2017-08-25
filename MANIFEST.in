@@ -1,0 +1,4 @@
+include LICENSE
+
+recursive-include flake8_class_newline *.py
+recursive-include tests *.py
