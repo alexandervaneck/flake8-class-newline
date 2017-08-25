@@ -31,4 +31,6 @@ git push
 git push --tags
 
 # Publish the release to PyPI
-python setup.py sdist --formats=gztar,zip upload
+python setup.py sdist
+twine upload -r pypitest dist/flake8-class-newline-$version_number.tar.gz
+twine upload dist/flake8-class-newline-$version_number.tar.gz
