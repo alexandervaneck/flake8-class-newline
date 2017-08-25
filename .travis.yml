@@ -20,4 +20,4 @@ install:
 
 script:
   # Run our tests
-  - ./test.sh
+  - sh test.sh
