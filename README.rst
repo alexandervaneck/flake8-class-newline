@@ -25,6 +25,31 @@ It produces only 1 error type; "CNL100: Class definition does not have a new lin
 NOTE; Documentation blocks (or docblocks) should be on the newline, they are therefore ignored by this plugin. See https://www.python.org/dev/peps/pep-0008/#documentation-strings
 
 
+Example
+-----
+
+PEP8 is unclear on whether we should allow for a newline after a class definition.
+
+Basically;
+
+.. code:: python
+
+    class AClassWithoutANewLine(object):
+        an_arg = 'a_value'
+
+or
+
+.. code:: python
+
+    class AClassWithANewLine(object):
+
+        an_arg = 'a_value'
+
+
+The former seems to be widely accepted by auto-formatters. This plugin was made to enforce the latter.
+
+
+
 Special Notice
 -----
 
