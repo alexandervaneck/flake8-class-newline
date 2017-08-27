@@ -1,55 +1,35 @@
-from flake8_class_newline import ClassNewLineChecker
-import os
+from flake8_class_newline import new_line_checker
 from unittest import TestCase
 
 
 class TestChecks(TestCase):
     def test_checks_class_new_lines(self):
-        class Options(object):
-            allow_docstrings = False
-
-        ClassNewLineChecker.parse_options(Options)
-
-        checker = ClassNewLineChecker(
+        errors = []
+        expected_errors = [
             None,
-            filename=get_absolute_path('data/classes.py')
-        )
+            (0, 'CNL100: Class definition does not have a new line.'),
+            None,
+            None,
+            None,
+            None,
+            None
+        ]
 
-        errors = list(checker.run())
-        for line_number in [1, 10, 16]:
-            self.assertIn(
-                (
-                    line_number,
-                    0,
-                    'Q000: Class definition does not have a new line.',
-                    type(checker)
-                ),
-                errors
+        lines = [
+            'class ClassWithoutANewLine(object):',
+            'aaasome_arg = "a_string"',
+            '',
+            '',
+            'class ClassWithNewLine(object):',
+            '   ',
+            'some_arg = "a_string"'
+        ]
+
+        for line_number, line in enumerate(lines):
+            errors.append(
+                new_line_checker(
+                    physical_line=line, line_number=line_number
+                )
             )
 
-    def test_checks_class_new_lines_with_docstrings(self):
-        class Options(object):
-            allow_docstrings = True
-
-        ClassNewLineChecker.parse_options(Options)
-
-        checker = ClassNewLineChecker(
-            None,
-            filename=get_absolute_path('data/classes.py')
-        )
-
-        errors = list(checker.run())
-        for line_number in [1]:
-            self.assertIn(
-                (
-                    line_number,
-                    0,
-                    'Q000: Class definition does not have a new line.',
-                    type(checker)
-                ),
-                errors
-            )
-
-
-def get_absolute_path(filepath):
-    return os.path.join(os.path.dirname(__file__), filepath)
+        self.assertEqual(expected_errors, errors)

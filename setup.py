@@ -38,7 +38,7 @@ setup(
     include_package_data=True,
     entry_points={
         'flake8.extension': [
-            'Q0 = flake8_class_newline:ClassNewLineChecker',
+            'CNL100 = flake8_class_newline:new_line_checker'
         ],
     },
     license='MIT',
