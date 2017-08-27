@@ -5,3 +5,17 @@ class AClassWithNewLine(object):
 
 class AClassWithoutNewLine(object):
     an_arg = 'value'
+
+
+class ClassWithDoubleDocstringShouldBeIgnored(object):
+    """
+     a dicstrubg
+    """
+    an_arg = 'value'
+
+
+class ClassWithSingleDocstringShouldBeIgnored(object):
+    '''
+    a docstring
+    '''
+    an_arg = 'value'
