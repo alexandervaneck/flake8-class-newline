@@ -24,6 +24,9 @@ class TestChecks(TestCase):
             None,
             None,
             None,
+            None,
+            None,
+            None,
             None
         ]
 
@@ -34,7 +37,14 @@ class TestChecks(TestCase):
             '',
             'class ClassWithNewLine(object):',
             '   ',
-            'some_arg = "a_string"'
+            'some_arg = "a_string"',
+            'class ClassWithDoubleDocstringShouldBeIgnored(object):',
+            '""" A docstring """',
+            'some_arg = "a_string"',
+            'class ClassWithSingleDocstringShouldBeIgnored(object):',
+            "''' A docstring '''",
+            'some_arg = "a_string"',
+
         ]
         # This should produce no error.
         # the error line of file 1 should not be propagated to file 2.

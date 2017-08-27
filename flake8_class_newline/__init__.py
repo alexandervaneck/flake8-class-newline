@@ -10,7 +10,13 @@ def new_line_checker(physical_line, line_number, filename):
 
     if line_number in new_lines_on[filename]:
         # if the line is not only whitespace and not empty
-        if not physical_line.isspace() and physical_line:
+        double_quotes = physical_line.strip().startswith('"""')
+        quotes = physical_line.strip().startswith("'''")
+
+        not_only_space = not physical_line.isspace()
+        not_is_docstring = not (quotes or double_quotes)
+
+        if not_only_space and not_is_docstring and physical_line:
             # this means there's something on the line
             return 0, 'CNL100: Class definition does not have a new line.'
 

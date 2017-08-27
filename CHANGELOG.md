@@ -1,3 +1,6 @@
+# 1.3.0
+- Ignored docstrings when they are on a newline, as per pep8. 
+
 # 1.2.1
 - Fixed an issue where the line numbers of one file would bleed into the second file, therefore eventually producing errors on every line
 
