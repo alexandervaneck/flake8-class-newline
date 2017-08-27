@@ -27,6 +27,9 @@ class TestChecks(TestCase):
             None,
             None,
             None,
+            None,
+            None,
+            None,
             None
         ]
 
