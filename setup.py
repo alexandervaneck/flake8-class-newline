@@ -27,6 +27,7 @@ setup(
     name='flake8-class-newline',
     author='Alexander van Eck',
     author_email='alex@x-all.nl',
+    url='https://github.com/AlexanderVanEck/flake8-class-newline',
     version=version['__version__'],
     install_requires=[
         'flake8',
