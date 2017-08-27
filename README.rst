@@ -14,6 +14,13 @@ If you are using flake8, you can install this package through pip.
 
     pip install flake8-class-newline
 
+This plugin is then automatically triggered when you run;
+
+.. code:: shell
+
+    flake8
+
+It produces only 1 error type; `CNL100: Class definition does not have a new line.`
 
 Special Notice
 -----
