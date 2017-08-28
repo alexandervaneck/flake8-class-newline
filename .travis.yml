@@ -21,3 +21,12 @@ install:
 script:
   # Run our tests
   - sh test.sh
+
+deploy:
+  provider: pypi
+  user: alexandervaneck
+  password:
+    secure: Dtq/LsxVereu5tbwAXT5a8TcxJnl3UGLKxRQGHkvl2TDbLCD86NVqC6nddPbtybzeVqb9u1RY99atuhULBJVHVHJZoQDLWRuVUC0n/XoqHf3GClRwWKlbOfzck0p7jP8NhdxpCZEJYoZ/K1ZhkVjFCspzXONKCJjbMXsq4o6CuecE1JrHq78eSE2rRA0nY373ZbXcxD92ih05FeWVyOOiwFrfeEZO2H/T59HqDsYuPjhcBibN9rMWb17Y5SA1hCcvtVClBloMy1h+hw1Nor+Nc4Am5rjmfzXO8AzpvAQYJYzb8MNrpaDEKtkH8mVUCCst5ZZRw+KxhNK5DZuKWCOn5vCw5Jyy18GnrJw9DMs66t3KI2Cpg/FjxgBVSRsSao8v0U9ASs0eUQKFDx83K9CLUNJ0r2PttxSeGazSu5mMjzeshD4TkkrqGonrTVn2XbUIbRr1IWMFx5NR+KspsHlCM76j8kD4BVIF/wVRixZleB7IoxW/wKZRp+O2tVVDa6ctuOh+bozsl1lOgr54C7hb7P4ZqYlOMNcTCp/eN+FD4t2PPFWaRhx20Rd/Urk+Hvuma5Y+mhQYJi4+I07PUxCWsJUkCWlM7jrzdU5doRqqUoTXfWOK81WRXrreezpxvGjEhIuL0EU71ZtJMH/RVawzkJ6V94koYE3mpRTFQmZH0w=
+  distributions: "sdist bdist_wheel"
+  on:
+    tags: true
