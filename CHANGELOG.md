@@ -1,3 +1,6 @@
+# 1.5.1
+- Fixed a case where arguments on the newline that started with def (like 'default') where recognised as a method definition.
+
 # 1.5.0
 - PEP8 specifies only methods need a surrounding blank line, therefore class arguments are allowed on the newline.
 

@@ -3,6 +3,7 @@ from unittest import TestCase
 
 
 class TestChecks(TestCase):
+
     def check_file(self, lines, filename):
         errors = []
         for line_number, line in enumerate(lines):
@@ -63,6 +64,10 @@ class TestChecks(TestCase):
             '',
             'class ClassWithoutANewLineArgument(object):',
             '   an_arg = "a_value"',
+            '',
+            '',
+            'class ClassWithoutANewLineArgument(object):',
+            '   definetly_an_argument = "a_value"',
             '',
             '',
             'class ClassWithMultipleBases(AClassWithNewLine,'
