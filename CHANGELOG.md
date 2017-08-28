@@ -1,3 +1,6 @@
+# 1.5.0
+- PEP8 specifies only methods need a surrounding blank line, therefore class arguments are allowed on the newline.
+
 # 1.4.0
 - Went from physical lines to logical lines, since classes with multiple line base classes do not need to be flagged.
 

@@ -1,4 +1,4 @@
-Flake8 Extension to lint for a newline after a Class definition
+Flake8 Extension to lint for a method newline after a Class definition
 ===========================================
 
 .. image:: https://travis-ci.org/AlexvEck/flake8-class-newline.svg?branch=master
@@ -28,14 +28,21 @@ NOTE; Documentation blocks (or docblocks) should be on the newline, they are the
 Example
 -----
 
-PEP8 is unclear on whether we should allow for a newline after a class definition.
+PEP8 says we should surround every class method with a single blank line. See https://www.python.org/dev/peps/pep-0008/#blank-lines
+However flake8 is ambiguous about the first method having a blank line above it.
 
 Basically;
 
 .. code:: python
 
     class AClassWithoutANewLine(object):
-        an_arg = 'a_value'
+        def a_method(self):
+            return 'a_value'
+
+    class AClassWithoutANewLineProperty(object):
+        @property
+        def a_method(self):
+            return 'a_value'
 
 or
 
@@ -43,12 +50,20 @@ or
 
     class AClassWithANewLine(object):
 
-        an_arg = 'a_value'
+        def a_method(self):
+            return 'a_value'
+
+    class AClassWithANewLineProperty(object):
+
+        @property
+        def a_method(self):
+            return 'a_value'
 
 
-The former seems to be widely accepted by auto-formatters. This plugin was made to enforce the latter.
 
+This plugin was made to enforce the latter.
 
+NOTE; properties of a class do not need a surrounding blank line, only methods.
 
 Special Notice
 -----
