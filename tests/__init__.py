@@ -19,3 +19,10 @@ class ClassWithSingleDocstringShouldBeIgnored(object):
     a docstring
     '''
     an_arg = 'value'
+
+
+class ClassWithMultipleBases(AClassWithNewLine,
+                             ClassWithDoubleDocstringShouldBeIgnored,
+                             object):
+
+    an_arg = 'value'

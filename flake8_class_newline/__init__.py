@@ -1,27 +1,26 @@
 new_lines_on = {}
 
 
-def new_line_checker(physical_line, line_number, filename):
+def new_line_checker(logical_line, line_number, filename):
     if filename not in new_lines_on:
         new_lines_on[filename] = []
 
-    if physical_line.startswith('class'):
+    if logical_line.startswith('class'):
         new_lines_on[filename].append(line_number + 1)
 
     if line_number in new_lines_on[filename]:
         # if the line is not only whitespace and not empty
-        double_quotes = physical_line.strip().startswith('"""')
-        quotes = physical_line.strip().startswith("'''")
+        double_quotes = logical_line.strip().startswith('"""')
+        quotes = logical_line.strip().startswith("'''")
 
-        not_only_space = not physical_line.isspace()
+        not_only_space = not logical_line.isspace()
         not_is_docstring = not (quotes or double_quotes)
 
-        if not_only_space and not_is_docstring and physical_line:
+        if not_only_space and not_is_docstring and logical_line:
             # this means there's something on the line
-            return 0, 'CNL100: Class definition does not have a new line.'
-
-    return None
+            offset = line_number, 0
+            yield offset, 'CNL100: Class definition does not have a new line.'
 
 
 new_line_checker.name = 'new_line_checker'
-new_line_checker.version = '1.2.0'
+new_line_checker.version = '1.4.0'
