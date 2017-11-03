@@ -1,3 +1,6 @@
+# 1.6.0
+- Fixed an issue where the colon in the error message was causing issues
+
 # 1.5.1
 - Fixed a case where arguments on the newline that started with def (like 'default') where recognised as a method definition.
 
