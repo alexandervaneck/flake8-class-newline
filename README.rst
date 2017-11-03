@@ -20,7 +20,7 @@ This plugin is then automatically triggered when you run;
 
     flake8
 
-It produces only 1 error type; "CNL100: Class definition does not have a new line."
+It produces only 1 error type; "CNL100 Class definition does not have a new line."
 
 NOTE; Documentation blocks (or docblocks) should be on the newline, they are therefore ignored by this plugin. See https://www.python.org/dev/peps/pep-0008/#documentation-strings
 
