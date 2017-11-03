@@ -31,7 +31,7 @@ def new_line_checker(logical_line, line_number, filename):
         if not_only_space and not_is_docstring and is_callable:
             # this means there's something on the line
             offset = line_number, 0
-            yield offset, 'CNL100: Class definition does not have a new line.'
+            yield offset, 'CNL100 Class definition does not have a new line.'
 
 
 new_line_checker.name = 'new_line_checker'
