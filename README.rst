@@ -63,7 +63,7 @@ or
 
 This plugin was made to enforce the latter.
 
-NOTE; properties of a class do not need a surrounding blank line, only methods.
+NOTE: properties of a class do not need a surrounding blank line, only methods.
 
 Special Notice
 -----
